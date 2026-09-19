@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>What's It Worth? | Find Out What Your Stuff May Be Worth</title>
+  <title>What's It Worth? | Find Out What Your Stuff Is Worth</title>
 
-  <meta name="description" content="Curious what your item may be worth? Learn how to identify, research, and estimate the value of antiques, collectibles, tools, electronics, toys, jewelry, furniture, and more.">
+  <meta name="description" content="Take a photo of an item and learn how to identify it, research comparable prices, and estimate what it may be worth.">
 
   <style>
     * {
@@ -20,24 +20,26 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #f5f7fa;
-      color: #171717;
-      line-height: 1.65;
+      background: #0b0d10;
+      color: #f8fafc;
+      line-height: 1.6;
     }
 
+    /* HEADER */
+
     header {
-      background: #111827;
-      color: white;
       position: sticky;
       top: 0;
-      z-index: 10;
-      border-bottom: 1px solid #374151;
+      z-index: 100;
+      background: rgba(11, 13, 16, 0.95);
+      border-bottom: 1px solid #242932;
+      backdrop-filter: blur(10px);
     }
 
     .nav {
-      max-width: 1100px;
+      max-width: 1150px;
       margin: auto;
-      padding: 18px 20px;
+      padding: 17px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -47,116 +49,170 @@
     .logo {
       font-size: 22px;
       font-weight: 900;
-      letter-spacing: -0.5px;
+      letter-spacing: -1px;
+      color: white;
+    }
+
+    .logo span {
+      color: #f5c542;
     }
 
     nav a {
-      color: #dbeafe;
+      color: #cbd5e1;
       text-decoration: none;
-      margin-left: 20px;
+      margin-left: 22px;
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     nav a:hover {
-      color: white;
+      color: #f5c542;
     }
 
+    /* HERO */
+
     .hero {
-      background: white;
+      position: relative;
+      overflow: hidden;
+      padding: 95px 20px 85px;
       text-align: center;
-      padding: 75px 20px 65px;
-      border-bottom: 1px solid #e5e7eb;
+      background:
+        radial-gradient(circle at 50% 20%, #27220d 0%, #121419 35%, #0b0d10 70%);
+    }
+
+    .hero:before {
+      content: "$";
+      position: absolute;
+      font-size: 420px;
+      font-weight: 900;
+      color: rgba(245, 197, 66, 0.025);
+      left: 50%;
+      top: -170px;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: #f5c542;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
     }
 
     .hero h1 {
-      font-size: clamp(42px, 9vw, 76px);
-      line-height: 0.95;
-      letter-spacing: -4px;
-      margin: 0 0 22px;
-      font-weight: 900;
+      margin: 0;
+      font-size: clamp(48px, 10vw, 88px);
+      line-height: 0.92;
+      letter-spacing: -5px;
+      font-weight: 950;
+    }
+
+    .hero h1 span {
+      color: #f5c542;
     }
 
     .hero p {
-      max-width: 700px;
-      margin: 0 auto 30px;
-      font-size: 20px;
-      color: #4b5563;
+      max-width: 680px;
+      margin: 28px auto 34px;
+      color: #b8c0cc;
+      font-size: clamp(17px, 3vw, 21px);
     }
 
-    .button {
+    .hero-button {
       display: inline-block;
-      background: #2563eb;
-      color: white;
-      padding: 16px 30px;
-      border-radius: 10px;
+      background: #f5c542;
+      color: #111318;
+      padding: 17px 34px;
+      border-radius: 12px;
       text-decoration: none;
-      font-weight: 800;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
+      font-weight: 950;
+      font-size: 17px;
+      box-shadow: 0 8px 30px rgba(245, 197, 66, 0.16);
     }
 
-    .button:hover {
-      background: #1d4ed8;
+    .hero-button:hover {
+      background: #ffd85f;
+      transform: translateY(-1px);
     }
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 60px 20px;
-    }
-
-    h2 {
-      font-size: 34px;
-      line-height: 1.2;
-      margin-top: 0;
-      margin-bottom: 15px;
-    }
-
-    h3 {
-      line-height: 1.3;
-    }
-
-    .intro {
-      max-width: 800px;
-      color: #4b5563;
-    }
-
-    /* PHOTO TOOL */
+    /* TOOL */
 
     .tool-section {
-      background: #111827;
-      color: white;
-      padding: 70px 20px;
+      padding: 75px 20px;
+      background: #11151a;
     }
 
     .tool {
-      max-width: 760px;
+      max-width: 800px;
       margin: auto;
       text-align: center;
     }
 
-    .tool h2 {
-      font-size: 40px;
-      margin-bottom: 10px;
+    .section-label {
+      color: #f5c542;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
-    .tool p {
-      color: #cbd5e1;
+    .tool h2 {
+      margin: 8px 0 10px;
+      font-size: clamp(32px, 6vw, 48px);
+      letter-spacing: -2px;
+    }
+
+    .tool > p {
+      color: #9ca7b5;
+      max-width: 620px;
+      margin: 0 auto;
     }
 
     .upload-box {
-      margin-top: 30px;
-      background: #1f2937;
-      border: 2px dashed #64748b;
-      border-radius: 16px;
-      padding: 45px 20px;
+      margin-top: 35px;
+      padding: 48px 25px;
+      background: linear-gradient(145deg, #191e25, #12161b);
+      border: 2px dashed #555f6d;
+      border-radius: 22px;
+      transition: border-color 0.2s, transform 0.2s;
     }
 
-    .upload-icon {
-      font-size: 48px;
-      margin-bottom: 10px;
+    .upload-box:hover {
+      border-color: #f5c542;
+      transform: translateY(-2px);
+    }
+
+    .camera {
+      width: 78px;
+      height: 78px;
+      margin: auto;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #29230d;
+      border: 1px solid #63531d;
+      font-size: 38px;
+    }
+
+    .upload-box h3 {
+      margin: 18px 0 8px;
+      font-size: 25px;
+    }
+
+    .upload-box p {
+      max-width: 550px;
+      margin: 0 auto 25px;
+      color: #9ca7b5;
     }
 
     #photoInput {
@@ -165,62 +221,123 @@
 
     .upload-label {
       display: inline-block;
-      background: #2563eb;
-      color: white;
-      padding: 16px 30px;
-      border-radius: 10px;
-      font-weight: 800;
+      background: #f5c542;
+      color: #111318;
+      padding: 16px 28px;
+      border-radius: 11px;
+      font-weight: 900;
       cursor: pointer;
     }
 
     .upload-label:hover {
-      background: #1d4ed8;
+      background: #ffd85f;
     }
 
     #preview {
+      display: none;
       max-width: 100%;
       max-height: 350px;
-      border-radius: 12px;
-      margin: 25px auto 0;
-      display: none;
+      margin: 28px auto 0;
+      border-radius: 14px;
+      border: 1px solid #3b424d;
     }
 
     #photoMessage {
-      margin-top: 18px;
-      color: #bfdbfe;
       display: none;
+      margin-top: 18px;
+      color: #f5c542;
+      font-weight: 700;
     }
 
-    .coming-soon {
-      margin-top: 25px;
+    .tool-note {
+      margin-top: 20px;
+      color: #6f7a89;
+      font-size: 13px;
+    }
+
+    /* VALUE RANGE */
+
+    .value-preview {
+      max-width: 850px;
+      margin: 55px auto 0;
+      padding: 28px;
+      background: #151a20;
+      border: 1px solid #2a313b;
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .value-preview h3 {
+      margin: 0 0 5px;
+      color: #aab4c1;
       font-size: 14px;
-      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    /* CARDS */
+    .value-number {
+      font-size: clamp(40px, 8vw, 65px);
+      font-weight: 950;
+      color: #f5c542;
+      letter-spacing: -3px;
+    }
 
-    .cards {
+    .value-preview p {
+      color: #818c9b;
+      margin: 5px 0 0;
+      font-size: 13px;
+    }
+
+    /* GENERAL */
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 75px 20px;
+    }
+
+    .container h2 {
+      margin: 0 0 15px;
+      font-size: clamp(31px, 5vw, 44px);
+      letter-spacing: -2px;
+    }
+
+    .intro {
+      max-width: 780px;
+      color: #9ca7b5;
+    }
+
+    /* STEPS */
+
+    .steps {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 30px;
+      gap: 18px;
+      margin-top: 35px;
     }
 
-    .card {
-      background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
-      padding: 27px;
+    .step {
+      padding: 28px;
+      background: #12161b;
+      border: 1px solid #272e38;
+      border-radius: 16px;
     }
 
-    .card h3 {
-      margin-top: 0;
+    .step-number {
+      color: #f5c542;
+      font-size: 14px;
+      font-weight: 950;
+      letter-spacing: 1px;
+    }
+
+    .step h3 {
+      margin: 10px 0 8px;
       font-size: 21px;
     }
 
-    .card p {
-      color: #4b5563;
-      margin-bottom: 0;
+    .step p {
+      margin: 0;
+      color: #929dac;
     }
 
     /* CATEGORIES */
@@ -233,66 +350,95 @@
     }
 
     .category {
-      background: white;
-      border: 1px solid #e5e7eb;
       padding: 20px;
-      border-radius: 10px;
-      font-weight: 700;
+      background: #12161b;
+      border: 1px solid #272e38;
+      border-radius: 12px;
+      font-weight: 800;
+      transition: 0.2s;
+    }
+
+    .category:hover {
+      border-color: #f5c542;
+      transform: translateY(-2px);
     }
 
     /* GUIDES */
 
+    .guides {
+      background: #101419;
+    }
+
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 30px;
+    }
+
     .guide {
-      background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
       padding: 28px;
-      margin-top: 20px;
+      background: #151a20;
+      border: 1px solid #292f38;
+      border-radius: 16px;
     }
 
     .guide h3 {
       margin-top: 0;
-      font-size: 23px;
+      font-size: 22px;
     }
 
     .guide p {
-      color: #4b5563;
+      color: #969fac;
+    }
+
+    /* FAQ */
+
+    .faq-list {
+      max-width: 850px;
+      margin-top: 30px;
+    }
+
+    .faq {
+      padding: 23px;
+      margin-top: 12px;
+      background: #12161b;
+      border: 1px solid #292f38;
+      border-radius: 13px;
+    }
+
+    .faq h3 {
+      margin: 0 0 7px;
+      font-size: 18px;
+    }
+
+    .faq p {
+      margin: 0;
+      color: #929dac;
     }
 
     /* NOTICE */
 
     .notice {
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      padding: 24px;
-      border-radius: 12px;
-      margin-top: 30px;
+      max-width: 900px;
+      margin: auto;
+      padding: 28px;
+      background: #19170f;
+      border: 1px solid #4a411d;
+      border-radius: 15px;
+      color: #c4bd9e;
     }
 
-    /* FAQ */
-
-    .faq {
-      background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      padding: 22px;
-      margin-top: 12px;
+    .notice strong {
+      color: #f5c542;
     }
 
-    .faq h3 {
-      margin: 0 0 8px;
-    }
-
-    .faq p {
-      margin: 0;
-      color: #4b5563;
-    }
+    /* FOOTER */
 
     footer {
-      background: #111827;
-      color: #d1d5db;
+      background: #080a0d;
+      border-top: 1px solid #252a32;
       padding: 45px 20px;
-      margin-top: 20px;
     }
 
     .footer-inner {
@@ -300,24 +446,72 @@
       margin: auto;
     }
 
+    .footer-logo {
+      font-size: 21px;
+      font-weight: 950;
+    }
+
+    .footer-logo span {
+      color: #f5c542;
+    }
+
+    .footer-inner p {
+      color: #727c89;
+      max-width: 600px;
+    }
+
     .footer-links {
-      margin-top: 20px;
+      margin-top: 22px;
     }
 
     .footer-links a {
-      color: #bfdbfe;
+      color: #aab3bf;
       text-decoration: none;
-      margin-right: 20px;
+      margin-right: 22px;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      color: #f5c542;
     }
 
     .copyright {
       margin-top: 25px;
-      font-size: 13px;
-      color: #9ca3af;
+      color: #5d6672;
+      font-size: 12px;
     }
 
+    /* MOBILE */
+
     @media (max-width: 800px) {
-      .cards {
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        width: 100%;
+        display: flex;
+        gap: 15px;
+        overflow-x: auto;
+        padding-bottom: 2px;
+      }
+
+      nav a {
+        margin: 0;
+        white-space: nowrap;
+      }
+
+      .hero {
+        padding: 70px 20px;
+      }
+
+      .hero h1 {
+        letter-spacing: -3px;
+      }
+
+      .steps {
         grid-template-columns: 1fr;
       }
 
@@ -325,60 +519,82 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav a {
-        margin-left: 0;
-        margin-right: 15px;
+      .guide-grid {
+        grid-template-columns: 1fr;
       }
     }
 
     @media (max-width: 500px) {
+
       .categories {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
       }
 
-      .hero {
-        padding-top: 55px;
+      .category {
+        padding: 16px 12px;
+        font-size: 14px;
       }
 
-      .hero h1 {
-        letter-spacing: -2px;
+      .upload-box {
+        padding: 38px 17px;
+      }
+
+      .hero-button {
+        width: 100%;
+        max-width: 330px;
       }
     }
+
   </style>
 </head>
 
 <body>
 
 <header>
+
   <div class="nav">
-    <div class="logo">WHAT'S IT WORTH?</div>
+
+    <div class="logo">
+      WHAT'S <span>IT WORTH?</span>
+    </div>
 
     <nav>
       <a href="#tool">Check an Item</a>
-      <a href="#guides">Value Guides</a>
       <a href="#how">How It Works</a>
+      <a href="#guides">Value Guides</a>
+      <a href="#faq">FAQ</a>
     </nav>
+
   </div>
+
 </header>
 
 
 <!-- HERO -->
 
 <section class="hero">
-  <h1>What's It Worth?</h1>
 
-  <p>
-    Curious what something you own might be worth?
-    Upload a photo and learn how to identify your item,
-    research its value, and understand what buyers may pay.
-  </p>
+  <div class="hero-content">
 
-  <a class="button" href="#tool">📷 Check My Item</a>
+    <div class="eyebrow">Discover the value of your stuff</div>
+
+    <h1>
+      WHAT'S<br>
+      <span>IT WORTH?</span>
+    </h1>
+
+    <p>
+      Found something interesting? Take a picture and learn how to
+      identify it, research its market value, and figure out what
+      buyers might actually pay.
+    </p>
+
+    <a class="hero-button" href="#tool">
+      📷 CHECK MY ITEM
+    </a>
+
+  </div>
+
 </section>
 
 
@@ -388,26 +604,27 @@
 
   <div class="tool">
 
+    <div class="section-label">Start Here</div>
+
     <h2>What’s Your Item Worth?</h2>
 
     <p>
-      Start by taking a clear photograph of the item or uploading
-      a picture from your device.
+      Upload a photo from your phone or computer. For the best results,
+      photograph the entire item and include important markings or labels.
     </p>
 
     <div class="upload-box">
 
-      <div class="upload-icon">📷</div>
+      <div class="camera">📷</div>
 
-      <h3>Upload a Photo</h3>
+      <h3>Show Us What You've Got</h3>
 
       <p>
-        For the best results, photograph the entire item and include
-        labels, markings, model numbers, signatures, or other details.
+        Take a clear picture or choose an existing photo from your device.
       </p>
 
       <label class="upload-label" for="photoInput">
-        Choose a Photo
+        📸 Upload a Photo
       </label>
 
       <input
@@ -417,16 +634,31 @@
         capture="environment"
       >
 
-      <img id="preview" alt="Uploaded item preview">
+      <img
+        id="preview"
+        alt="Preview of uploaded item"
+      >
 
       <div id="photoMessage">
-        Your photo has been selected. The item valuation feature is
-        coming soon.
+        ✓ Photo selected successfully.
       </div>
 
-      <div class="coming-soon">
-        Photo-powered item identification and value estimates are coming soon.
+      <div class="tool-note">
+        Photo-powered identification and valuation coming soon.
       </div>
+
+    </div>
+
+    <div class="value-preview">
+
+      <h3>Estimated Value</h3>
+
+      <div class="value-number">$—</div>
+
+      <p>
+        Your estimated range will appear here when the valuation feature
+        is connected.
+      </p>
 
     </div>
 
@@ -439,42 +671,57 @@
 
 <section class="container" id="how">
 
-  <h2>How to Find Out What Something Is Worth</h2>
+  <div class="section-label">The Basics</div>
+
+  <h2>How Do You Figure Out What Something Is Worth?</h2>
 
   <p class="intro">
-    Figuring out an item's value usually takes more than knowing its name.
-    Brand, model, age, condition, rarity, completeness, authenticity,
-    and current demand can all affect what an item may sell for.
+    The value of an item isn't always obvious. An old object isn't
+    automatically valuable, and an item that looks ordinary can sometimes
+    have a strong resale market.
   </p>
 
-  <div class="cards">
+  <div class="steps">
 
-    <div class="card">
-      <h3>1. Identify the Item</h3>
+    <div class="step">
+
+      <div class="step-number">01 — IDENTIFY</div>
+
+      <h3>Find Out What It Is</h3>
 
       <p>
-        Look for brand names, model numbers, dates, labels, signatures,
-        serial numbers, maker's marks, and other identifying information.
+        Look for brands, model numbers, dates, signatures, labels,
+        serial numbers, maker's marks, and other identifying details.
       </p>
+
     </div>
 
-    <div class="card">
-      <h3>2. Examine Condition</h3>
+
+    <div class="step">
+
+      <div class="step-number">02 — INSPECT</div>
+
+      <h3>Check the Condition</h3>
 
       <p>
-        Check carefully for scratches, damage, repairs, missing parts,
-        wear, discoloration, original packaging, and whether the item works.
+        Look for damage, repairs, missing parts, wear, original packaging,
+        and whether the item is complete and functional.
       </p>
+
     </div>
 
-    <div class="card">
-      <h3>3. Research Comparable Prices</h3>
+
+    <div class="step">
+
+      <div class="step-number">03 — RESEARCH</div>
+
+      <h3>Compare Real Prices</h3>
 
       <p>
-        Compare your item with similar items that have actually sold.
-        Asking prices can be useful, but they don't necessarily represent
-        what buyers ultimately paid.
+        Research similar items and, when possible, look at completed sales.
+        An asking price doesn't necessarily mean that's what an item sold for.
       </p>
+
     </div>
 
   </div>
@@ -486,29 +733,31 @@
 
 <section class="container">
 
-  <h2>What Can You Research?</h2>
+  <div class="section-label">Explore</div>
+
+  <h2>What Kind of Item Do You Have?</h2>
 
   <p class="intro">
-    Almost anything can have a resale market. Start with the category
-    that best describes your item.
+    These are some of the categories where people commonly research
+    resale values and collectible prices.
   </p>
 
   <div class="categories">
 
-    <div class="category">Antiques</div>
-    <div class="category">Collectibles</div>
-    <div class="category">Tools</div>
-    <div class="category">Electronics</div>
+    <div class="category">🪑 Antiques</div>
+    <div class="category">🎮 Collectibles</div>
+    <div class="category">🔧 Tools</div>
+    <div class="category">📺 Electronics</div>
 
-    <div class="category">Toys</div>
-    <div class="category">Jewelry</div>
-    <div class="category">Furniture</div>
-    <div class="category">Coins</div>
+    <div class="category">🧸 Toys</div>
+    <div class="category">💎 Jewelry</div>
+    <div class="category">🛋️ Furniture</div>
+    <div class="category">🪙 Coins</div>
 
-    <div class="category">Cameras</div>
-    <div class="category">Sports Memorabilia</div>
-    <div class="category">Vintage Clothing</div>
-    <div class="category">Household Items</div>
+    <div class="category">📷 Cameras</div>
+    <div class="category">⚾ Sports Memorabilia</div>
+    <div class="category">👕 Vintage Clothing</div>
+    <div class="category">🏠 Household Items</div>
 
   </div>
 
@@ -517,151 +766,161 @@
 
 <!-- VALUE GUIDES -->
 
-<section class="container" id="guides">
+<section class="guides">
 
-  <h2>Value Guides</h2>
+  <div class="container" id="guides">
 
-  <p class="intro">
-    Understanding value starts with knowing what information matters.
-    These guides explain the basics of researching items before you sell.
-  </p>
+    <div class="section-label">Learn</div>
 
+    <h2>Value Guides</h2>
 
-  <article class="guide">
-
-    <h3>How Condition Affects Value</h3>
-
-    <p>
-      Condition is one of the most important factors in determining resale
-      value. Two identical items can sell for very different amounts when
-      one is complete and well preserved while the other has significant
-      damage or missing components.
+    <p class="intro">
+      Before you sell something, understanding the factors that affect
+      value can help you make a more informed decision.
     </p>
 
-    <p>
-      When evaluating an item, look at the overall appearance, functionality,
-      structural condition, original parts, packaging, labels, and evidence
-      of repairs or restoration.
-    </p>
 
-  </article>
+    <div class="guide-grid">
 
+      <article class="guide">
 
-  <article class="guide">
+        <h3>Condition Can Change Everything</h3>
 
-    <h3>Why Identifying the Exact Model Matters</h3>
+        <p>
+          Condition is one of the most important factors in resale value.
+          Two identical items can sell for very different prices when one
+          is complete and well preserved while the other has damage,
+          missing parts, or extensive wear.
+        </p>
 
-    <p>
-      A brand name alone often isn't enough. Different models, production
-      years, editions, sizes, materials, and variations can have very
-      different markets.
-    </p>
+        <p>
+          Examine the item carefully and document both its strengths
+          and its defects before researching prices.
+        </p>
 
-    <p>
-      Look for model numbers, serial numbers, manufacturer's marks,
-      date codes, labels, and other identifying information before comparing
-      prices.
-    </p>
-
-  </article>
+      </article>
 
 
-  <article class="guide">
+      <article class="guide">
 
-    <h3>Sold Prices vs. Asking Prices</h3>
+        <h3>Find the Exact Model</h3>
 
-    <p>
-      One of the biggest mistakes people make when researching value is
-      looking only at current asking prices. An item listed for $500 isn't
-      necessarily an item buyers are willing to purchase for $500.
-    </p>
+        <p>
+          A brand name alone may not identify an item precisely. Different
+          models, production years, editions, sizes, and variations can
+          have very different values.
+        </p>
 
-    <p>
-      When possible, research completed or sold examples of the same or
-      closely comparable item. This gives you a better indication of actual
-      market activity.
-    </p>
+        <p>
+          Model numbers, date codes, labels, serial numbers, and maker's
+          marks can help narrow down exactly what you have.
+        </p>
 
-  </article>
+      </article>
 
 
-  <article class="guide">
+      <article class="guide">
 
-    <h3>What Makes an Item More Valuable?</h3>
+        <h3>Don't Confuse Asking Prices With Sales</h3>
 
-    <p>
-      Value can be influenced by rarity, demand, age, condition, brand,
-      authenticity, provenance, completeness, originality, and current
-      collector interest.
-    </p>
+        <p>
+          An item listed online for $500 isn't necessarily worth $500.
+          The seller may never receive an offer at that price.
+        </p>
 
-    <p>
-      An older item isn't automatically valuable. Some older products were
-      produced in large quantities and remain relatively common, while
-      certain less-obvious items can have strong demand.
-    </p>
+        <p>
+          When possible, research completed sales or other evidence of
+          actual transactions involving comparable items.
+        </p>
 
-  </article>
+      </article>
+
+
+      <article class="guide">
+
+        <h3>Older Doesn't Always Mean Valuable</h3>
+
+        <p>
+          Age is only one factor. Rarity, demand, condition, authenticity,
+          brand, completeness, and collector interest can all affect value.
+        </p>
+
+        <p>
+          Some very old items are common, while newer or less obvious items
+          can sometimes command much higher prices.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
 
 </section>
 
 
 <!-- FAQ -->
 
-<section class="container">
+<section class="container" id="faq">
+
+  <div class="section-label">Questions</div>
 
   <h2>Frequently Asked Questions</h2>
 
+  <div class="faq-list">
 
-  <div class="faq">
+    <div class="faq">
 
-    <h3>Can a photograph tell me exactly what my item is worth?</h3>
+      <h3>Can a photo tell me exactly what my item is worth?</h3>
 
-    <p>
-      A photograph can provide useful clues, but it may not reveal everything
-      that affects value. Authenticity, hidden damage, working condition,
-      rarity, provenance, and other details may require additional research
-      or physical inspection.
-    </p>
+      <p>
+        Not necessarily. A photograph can provide useful clues, but
+        authenticity, hidden damage, working condition, rarity, provenance,
+        and other details may require additional research or physical
+        inspection.
+      </p>
 
-  </div>
-
-
-  <div class="faq">
-
-    <h3>Does an older item automatically have more value?</h3>
-
-    <p>
-      No. Age is only one factor. Demand, rarity, condition, authenticity,
-      brand, and availability can be more important than age alone.
-    </p>
-
-  </div>
+    </div>
 
 
-  <div class="faq">
+    <div class="faq">
 
-    <h3>What should I photograph?</h3>
+      <h3>What should I photograph?</h3>
 
-    <p>
-      Take a clear photo of the entire item. When possible, include close-up
-      photographs of labels, markings, signatures, model numbers, serial
-      numbers, damage, and unusual details.
-    </p>
+      <p>
+        Photograph the entire item and include close-ups of labels,
+        markings, signatures, model numbers, serial numbers, damage,
+        unusual details, and other information that could help identify it.
+      </p>
 
-  </div>
+    </div>
 
 
-  <div class="faq">
+    <div class="faq">
 
-    <h3>Is an online estimate the same as a professional appraisal?</h3>
+      <h3>How is an item's resale value determined?</h3>
 
-    <p>
-      No. An online estimate is informational and may not account for every
-      factor involved in a professional appraisal. High-value, rare, or
-      potentially authenticated items may require evaluation by a qualified
-      specialist.
-    </p>
+      <p>
+        Value can be influenced by condition, rarity, demand, brand,
+        authenticity, completeness, age, provenance, and the marketplace
+        where the item is sold.
+      </p>
+
+    </div>
+
+
+    <div class="faq">
+
+      <h3>Is an online estimate a professional appraisal?</h3>
+
+      <p>
+        No. Online estimates are informational and may not account for
+        every factor considered during a professional appraisal. Rare,
+        expensive, or potentially authenticated items may require evaluation
+        by a qualified specialist.
+      </p>
+
+    </div>
 
   </div>
 
@@ -674,18 +933,19 @@
 
   <div class="notice">
 
-    <strong>Important valuation disclaimer:</strong>
+    <strong>Important:</strong>
 
     <p>
-      Information provided by What's It Worth? is intended for general
-      informational and educational purposes. Estimates may differ from
-      actual selling prices and should not be considered guaranteed values
-      or professional appraisals.
+      What's It Worth? provides general informational estimates and
+      educational resources. An estimated value is not a guarantee of
+      what an item will sell for and should not be considered a professional
+      appraisal.
     </p>
 
     <p>
-      Always research an item carefully before making financial decisions
-      based on an estimated value.
+      Market prices can change, and actual selling prices may vary depending
+      on condition, location, demand, authenticity, timing, and the
+      marketplace used.
     </p>
 
   </div>
@@ -697,18 +957,22 @@
 
 <section class="container">
 
-  <h2>About What's It Worth?</h2>
+  <div class="section-label">Our Mission</div>
+
+  <h2>Know What You Have Before You Sell It</h2>
 
   <p class="intro">
-    What's It Worth? is being built to make researching the potential value
-    of everyday items easier. Our goal is to help people identify what they
-    own, understand the factors that affect value, and make better-informed
-    decisions when buying or selling.
+    What's It Worth? is being built to make researching everyday items
+    easier. Whether you found something in an attic, inherited an old
+    collection, discovered an interesting piece at a yard sale, or simply
+    wondered about something sitting in your home, our goal is to help
+    you learn more about it.
   </p>
 
   <p class="intro">
-    The website will continue to expand with valuation guides, research
-    resources, and photo-based item identification tools.
+    We're building simple tools and useful guides that help people identify
+    their belongings, understand the factors that affect value, and research
+    potential resale prices.
   </p>
 
 </section>
@@ -720,10 +984,12 @@
 
   <div class="footer-inner">
 
-    <strong>WHAT'S IT WORTH?</strong>
+    <div class="footer-logo">
+      WHAT'S <span>IT WORTH?</span>
+    </div>
 
     <p>
-      Helping people learn what their stuff may be worth.
+      Discover what your stuff may be worth.
     </p>
 
     <div class="footer-links">
@@ -748,7 +1014,7 @@
   const preview = document.getElementById("preview");
   const photoMessage = document.getElementById("photoMessage");
 
-  photoInput.addEventListener("change", function() {
+  photoInput.addEventListener("change", function () {
 
     const file = this.files[0];
 
